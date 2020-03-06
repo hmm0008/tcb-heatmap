@@ -19,17 +19,17 @@ LNGLIST = []
 # lon: 140, -152
 
 def get_center(c):
-    latSum = 0
     lngSum = 0
+    latSum = 0
 
     for coor in c:
-        latSum += coor[0]
-        lngSum += coor[1]
+        lngSum += coor[0]
+        latSum += coor[1]
 
-    lat = latSum/len(c)
     lng = lngSum/len(c)
+    lat = latSum/len(c)
 
-    return lat, lng
+    return lng, lat
 
 def parse_json(json_list):
     for season in json_list:
@@ -65,4 +65,3 @@ if __name__ == "__main__":
     
     parse_json(ALL_MONTHS)
     draw_map()
-    
